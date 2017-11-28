@@ -46,7 +46,7 @@ From: nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
   # updating and getting required packages
   apt-get update
-  apt-get install -y wget git vim
+  apt-get install -y wget git vim build-essential
 
   # creates a build directory
   mkdir build
