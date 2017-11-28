@@ -58,8 +58,17 @@ From: nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
   chmod +x Anaconda3-5.0.1-Linux-x86_64.sh
   ./Anaconda3-5.0.1-Linux-x86_64.sh -b -p $CONDA_INSTALL_PATH
 
+  # idea courtesy https://tspankaj.com/2017/08/12/cuda-9-and-cudnn-7-with-pytorch/
+
   # install pytorch
-  conda install pytorch torchvision -c conda-forge
+  git clone https://github.com/csarofeen/pytorch
+  cd pytorch
+  git checkout cuda9
+
+  export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
+  conda install numpy pyyaml mkl setuptools cmake gcc cffi
+  conda install -c soumith magma-cuda80
+  python setup.py install
 
 %runscript
   # executes with the singularity run command
