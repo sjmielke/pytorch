@@ -1,12 +1,12 @@
 # tensorflow
 
-TensorFlow Version: 1.4.0
+PyTorch Version: X.X.X
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
 Here's how to run it on MARCC systems:
 
-Work with this job script `tensorflow_job.sh`:
+Work with this job script `pytorch_job.sh`:
 
 ```
 #!/bin/bash
@@ -19,20 +19,21 @@ Work with this job script `tensorflow_job.sh`:
 module load cuda/9.0           # also locates matching $CUDA_DRIVER location
 module load singularity/2.4
 
-wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/train_softmax.txt
-wget -N https://raw.githubusercontent.com/dsindex/tensorflow/master/softmax_regression.py
-wget -N http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
-wget -N http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
-wget -N http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
-wget -N http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+mygroup=$(id $USER -Gn) # identify your primary group
+mkdir -p /scratch/groups/$mygroup/pytorch
+cd /scratch/groups/$mygroup/pytorch
 
-singularity pull --name tensorflow shub://marcc-hpc/tensorflow
+singularity pull --name pytorch shub://marcc-hpc/tensorflow
+
+git clone https://github.com/pytorch/examples
+cd examples/mnist
+ln -s /scratch/groups/$mygroup/pytorch/pytorch.simg .
 
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
 
-singularity exec -B $CUDA_DRIVER:/.singularity.d/libs/ ./tensorflow.simg python softmax_regression.py
+singularity exec --nv ./pytorch.simg python softmax_regression.py
 
 ```
 
-Submit job: `sbatch tensorflow_job.sh`
+Submit job: `sbatch pytorch_job.sh`
