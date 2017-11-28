@@ -66,7 +66,7 @@ From: nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
   git checkout cuda9
 
   export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
-  conda install numpy pyyaml mkl setuptools cmake gcc cffi
+  conda install numpy pyyaml mkl setuptools cmake cffi
   conda install -c soumith magma-cuda80
   python setup.py install
 
