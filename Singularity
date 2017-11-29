@@ -46,7 +46,7 @@ From: nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
   # updating and getting required packages
   apt-get update
-  apt-get install -y wget git vim build-essential
+  apt-get install -y wget git vim build-essential cmake
 
   # creates a build directory
   mkdir build
@@ -66,7 +66,7 @@ From: nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
   git checkout cuda9
 
   export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
-  conda install numpy pyyaml mkl setuptools cmake cffi
+  conda install numpy pyyaml mkl setuptools cffi
   conda install -c soumith magma-cuda80
   python setup.py install
 
