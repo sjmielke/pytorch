@@ -1,10 +1,10 @@
 # PyTorch
 
-PyTorch Version: X.X.X
+PyTorch Version: 0.2.0+0d7d79a
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
-Here's how to run it on MARCC systems:
+This job script can be submitted from anywhere, as the `scratch` locations are wired in - at MARCC, we recommend using your local scratch space, but please save your data for long-term archival in `/data/`
 
 Work with this job script `pytorch_job.sh`:
 
@@ -16,24 +16,21 @@ Work with this job script `pytorch_job.sh`:
 #SBATCH --gres=gpu:1
 #SBATCH -t 1:0:0
 
-module load cuda/9.0           # also locates matching $CUDA_DRIVER location
+module load cuda/9.0
 module load singularity/2.4
+module load git
 
-mygroup=$(id $USER -Gn) # identify your primary group
-mkdir -p /scratch/groups/$mygroup/pytorch
-cd /scratch/groups/$mygroup/pytorch
-
-singularity pull --name pytorch shub://marcc-hpc/tensorflow
+# work in your scratch space with a 'pytorch' folder
+mkdir -p /scratch/users/$USER/pytorch
+cd /scratch/groups/$USER/pytorch
 
 git clone https://github.com/pytorch/examples
 cd examples/mnist
-ln -s /scratch/groups/$mygroup/pytorch/pytorch.simg .
 
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
 
-singularity exec --nv ./pytorch.simg python softmax_regression.py
-
+singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python main.py
 ```
 
 Submit job: `sbatch pytorch_job.sh`
