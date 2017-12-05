@@ -6,6 +6,13 @@ From: marcchpc/pytorch_cuda9
   SHELL=/bin/bash
   export SHELL
   
+  # add CUDA paths
+  CPATH="/usr/local/cuda/include:$CPATH"
+  PATH="/usr/local/cuda/bin:$PATH"
+  LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+  CUDA_HOME="/usr/local/cuda"
+  export CPATH PATH LD_LIBRARY_PATH CUDA_HOME
+  
   # make conda accessible
   PATH=/opt/conda/envs/pytorch-py3.6/bin:$PATH
   export PATH
@@ -19,14 +26,11 @@ From: marcchpc/pytorch_cuda9
   # load environment variables
   . /environment
 
-  # use bash as default shell
-  echo 'SHELL=/bin/bash' >> /environment
-
   # make environment file executable
   chmod +x /environment
 
   # default mount paths
-  mkdir /scratch /data 
+  mkdir /scratch /data /work-zfs
   
   # add in opencv support
   conda install opencv
