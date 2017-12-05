@@ -7,7 +7,7 @@ From: marcchpc/pytorch_cuda9
   export SHELL
   
   # make conda accessible
-  PATH=/opt/conda/envs/pytorch-py3.6:$PATH
+  PATH=/opt/conda/envs/pytorch-py3.6/bin:$PATH
   export PATH
 
 %setup
