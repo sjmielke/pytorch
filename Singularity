@@ -5,6 +5,10 @@ From: marcchpc/pytorch_cuda9
   # use bash as default shell
   SHELL=/bin/bash
   export SHELL
+  
+  # make conda accessible
+  PATH=/opt/conda/envs/pytorch-py3.6:$PATH
+  export PATH
 
 %setup
   # runs on host - the path to the image is $SINGULARITY_ROOTFS
