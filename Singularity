@@ -23,6 +23,9 @@ From: marcchpc/pytorch_cuda9
 
   # default mount paths
   mkdir /scratch /data 
+  
+  # add in opencv support
+  conda install opencv
 
 %runscript
   # executes with the singularity run command
