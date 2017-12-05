@@ -22,7 +22,7 @@ module load git
 
 # work in your scratch space with a 'pytorch' folder
 mkdir -p /scratch/users/$USER/pytorch
-cd /scratch/groups/$USER/pytorch
+cd /scratch/users/$USER/pytorch
 
 git clone https://github.com/pytorch/examples
 cd examples/mnist
