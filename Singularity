@@ -33,7 +33,8 @@ From: marcchpc/pytorch_cuda9
   mkdir /scratch /data /work-zfs
   
   # add in opencv support to environment pytorch-py3.6
-  . /opt/conda/envs/pytorch-py3.6/bin/activate
+  /bin/bash
+  source /opt/conda/envs/pytorch-py3.6/bin/activate
   conda install opencv
 
 %runscript
