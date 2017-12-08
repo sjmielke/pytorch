@@ -30,9 +30,9 @@ From: marcchpc/pytorch_cuda9
   chmod +x /environment
 
   # default mount paths
-  mkdir /scratch /data /work-zfs
+  mkdir /scratch /data /work-zfs /usr/bin/nvidia-smi
   
- # add in opencv support to environment pytorch-py3.6
+  # add in opencv support to environment pytorch-py3.6
   /opt/conda/envs/pytorch-py3.6/bin/conda install --name pytorch-py3.6 opencv
 
 %runscript
