@@ -1,6 +1,6 @@
 # PyTorch
 
-PyTorch Version: 0.2.0+0d7d79a
+PyTorch Version: 0.4.0a0
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
