@@ -34,4 +34,5 @@ singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python mai
 ```
 
 Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/pytorch/0.4.0a0/pytorch_job.sh`
+
 Submit job: `sbatch pytorch_job.sh`
