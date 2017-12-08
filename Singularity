@@ -32,8 +32,8 @@ From: marcchpc/pytorch_cuda9
   # default mount paths
   mkdir /scratch /data /work-zfs
   
-  # add in opencv support
-  conda install opencv
+ # add in opencv support to environment pytorch-py3.6
+  /opt/conda/envs/pytorch-py3.6/bin/conda install --name pytorch-py3.6 opencv
 
 %runscript
   # executes with the singularity run command
