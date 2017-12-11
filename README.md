@@ -30,7 +30,11 @@ cd examples/mnist
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
 
-singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python main.py
+singularity pull --name pytorch.simg shub://marcc-hpc/pytorch
+singularity exec --nv ./pytorch.simg python main.py
+
+# alternatively on MARCC we just host the Singularity images
+# singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python main.py
 ```
 
 Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/pytorch/0.4.0a0/pytorch_job.sh`
