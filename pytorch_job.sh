@@ -16,6 +16,9 @@ cd /scratch/users/$USER/pytorch
 git clone https://github.com/pytorch/examples
 cd examples/mnist
 
+# create a 'data' directory
+mkdir data
+
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
 
