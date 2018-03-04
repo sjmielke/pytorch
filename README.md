@@ -24,11 +24,8 @@ module load git
 mkdir -p /scratch/users/$USER/pytorch
 cd /scratch/users/$USER/pytorch
 
-git clone https://github.com/pytorch/examples
-cd examples/mnist
-
-# create a 'data' directory
-mkdir data
+git clone https://github.com/marcc-hpc/pytorch
+cd mnist
 
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
@@ -42,8 +39,11 @@ singularity exec --nv ./pytorch.simg python main.py
 
 Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/pytorch/0.4.0a0/pytorch_job.sh`
 
-Note (Feb 2018): There are pointers to a `../data` directory in `main.py`.  Please change this to `./data`, otherwise you will see out of space errors (because `../data` is currently not accessible by Singularity if you mount the present working directory.
-
 Submit job: `sbatch pytorch_job.sh`
 
-Please open Github issues if you interested in correcting typos, adding examples, or just providing feedback!
+Please open Github issues if you interested in correcting typos, adding
+examples, or just providing feedback!
+
+Example taken from https://github.com/pytorch/examples (examples/mnist) LICENSE
+is reflected to show attribution; the only modifications are to point to an
+empty data folder inside the mnist folder.
