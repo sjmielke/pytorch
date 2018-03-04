@@ -32,9 +32,13 @@ singularity pull --name pytorch.simg shub://marcc-hpc/pytorch
 singularity exec --nv ./pytorch.simg python main.py
 ```
 
-Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/pytorch/0.4.0a0/pytorch_job.sh`
-
-Submit job: `sbatch pytorch_job.sh`
+Clone this repository and submit a job, for example on MARCC Blue Crab:
+```
+cd /scratch/users/$USER
+git clone https://github.com/marcc-hpc/pytorch.git
+cd pytorch
+sbatch pytorch_job.sh
+```
 
 Please open Github issues if you interested in correcting typos, adding
 examples, or just providing feedback!
