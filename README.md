@@ -4,7 +4,9 @@ PyTorch Version: 0.4.0a0
 
 MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
 
-This job script can be submitted from anywhere, as the `scratch` locations are wired in - at MARCC, we recommend using your local scratch space, but please save your data for long-term archival in `/data/`
+This job script can be submitted from anywhere, as the `scratch` locations are
+wired in - at MARCC, we recommend using your local scratch space, but please
+save your data for long-term archival in `~/data/`
 
 Work with this job script `pytorch_job.sh`:
 
