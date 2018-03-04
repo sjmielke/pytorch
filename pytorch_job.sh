@@ -16,7 +16,14 @@ cd /scratch/users/$USER/pytorch
 git clone https://github.com/pytorch/examples
 cd examples/mnist
 
+# create a 'data' directory
+mkdir data
+
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
 
-singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python main.py
+singularity pull --name pytorch.simg shub://marcc-hpc/pytorch
+singularity exec --nv ./pytorch.simg python main.py
+
+# alternatively on MARCC we just host the Singularity images
+# singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python main.py

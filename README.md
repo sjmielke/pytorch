@@ -27,12 +27,23 @@ cd /scratch/users/$USER/pytorch
 git clone https://github.com/pytorch/examples
 cd examples/mnist
 
+# create a 'data' directory
+mkdir data
+
 # redefine SINGULARITY_HOME to mount current working directory to base $HOME
 export SINGULARITY_HOME=$PWD:/home/$USER 
 
-singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python main.py
+singularity pull --name pytorch.simg shub://marcc-hpc/pytorch
+singularity exec --nv ./pytorch.simg python main.py
+
+# alternatively on MARCC we just host the Singularity images
+# singularity exec --nv /scratch/groups/singularity_images/pytorch.simg python main.py
 ```
 
 Download this file: `wget https://raw.githubusercontent.com/marcc-hpc/pytorch/0.4.0a0/pytorch_job.sh`
 
+Note (Feb 2018): There are pointers to a `../data` directory in `main.py`.  Please change this to `./data`, otherwise you will see out of space errors (because `../data` is currently not accessible by Singularity if you mount the present working directory.
+
 Submit job: `sbatch pytorch_job.sh`
+
+Please open Github issues if you interested in correcting typos, adding examples, or just providing feedback!
