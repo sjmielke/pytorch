@@ -32,8 +32,10 @@ From: marcchpc/pytorch_cuda9
   # default mount paths
   mkdir /scratch /data /work-zfs /usr/bin/nvidia-smi
   
-  # add in opencv support to default environment
-  /opt/conda/bin/conda install opencv
+  # user requests (contact marcc-help@marcc.jhu.edu)
+  /opt/conda/bin/conda install opencv scikit-learn scikit-image
+  /opt/conda/bin/conda install -c anaconda numpy pytest flake8 tensorflow-tensorboard
+  /opt/conda/bin/conda install -c conda-forge tensorboardx tqdm protobuf onnx
 
 %runscript
   # executes with the singularity run command
