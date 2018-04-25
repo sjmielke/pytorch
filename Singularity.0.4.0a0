@@ -29,9 +29,8 @@ From: marcchpc/pytorch_cuda9
   # make environment file executable
   chmod +x /environment
 
-  # default mount paths, files
-  mkdir /scratch /data /work-zfs 
-  touch /usr/bin/nvidia-smi
+  # default mount paths
+  mkdir /scratch /data /work-zfs /usr/bin/nvidia-smi
   
   # user requests (contact marcc-help@marcc.jhu.edu)
   /opt/conda/bin/conda install opencv scikit-learn scikit-image
