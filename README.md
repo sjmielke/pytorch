@@ -17,7 +17,7 @@ Here is a display of the job submission script: `pytorch_job.sh`:
 #SBATCH -t 1:0:0
 
 module load cuda/9.0
-module load singularity/2.4
+module load singularity
 
 cd mnist
 
