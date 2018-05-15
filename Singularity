@@ -34,7 +34,7 @@ From: marcchpc/pytorch_cuda9
   touch /usr/bin/nvidia-smi
   
   # user requests (contact marcc-help@marcc.jhu.edu)
-  /opt/conda/bin/conda install opencv scikit-learn scikit-image scipy pandas spectrum nibabel re
+  /opt/conda/bin/conda install opencv scikit-learn scikit-image scipy pandas spectrum nibabel mne
   /opt/conda/bin/conda install -c anaconda numpy pytest flake8 tensorflow-tensorboard
   /opt/conda/bin/conda install -c conda-forge tensorboardx tqdm protobuf onnx
 
