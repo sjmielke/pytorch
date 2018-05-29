@@ -36,7 +36,7 @@ From: marcchpc/pytorch_cuda9
   # user requests (contact marcc-help@marcc.jhu.edu)
   /opt/conda/bin/conda install opencv scikit-learn scikit-image scipy pandas 
   /opt/conda/bin/conda install -c anaconda numpy pytest flake8 tensorflow-tensorboard
-  /opt/conda/bin/conda install -c conda-forge tensorboardx tqdm protobuf onnx spectrum nibabel mne
+  /opt/conda/bin/conda install -c conda-forge tensorboardx tqdm protobuf onnx spectrum nibabel
 
 %runscript
   # executes with the singularity run command
