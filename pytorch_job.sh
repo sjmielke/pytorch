@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -n 6
-#SBATCH -p gpu
+#SBATCH -p gpuk80
 #SBATCH --gres=gpu:1
 #SBATCH -t 1:0:0
 

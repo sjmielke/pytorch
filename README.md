@@ -2,9 +2,9 @@
 
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/312)
 
-PyTorch Version: 0.4.0
+PyTorch Version: 0.5.0
 
-MARCC NVidia GPU and installed drivers at testing time were: K80 & 384.81.
+MARCC NVidia GPU and installed drivers at testing time were: K80 & 396.26.
 
 Here is a display of the job submission script: `pytorch_job.sh`:
 
