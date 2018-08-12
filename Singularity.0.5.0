@@ -39,7 +39,7 @@ From: marcchpc/pytorch_cuda9
   /opt/conda/bin/conda install -c conda-forge tensorboardx tqdm protobuf onnx spectrum nibabel
   
   # try a pip install
-  pip install torchtext
+  /opt/conda/bin/pip install torchtext
 
 %runscript
   # executes with the singularity run command
